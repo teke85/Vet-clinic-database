@@ -1,26 +1,34 @@
-/* Create vet clinic database*/
-CREATE DATABASE vet_clinic;
+/* Insert the following data into owners table*/
+INSERT INTO owners (full_name, age) VALUES
+('Sam Smith', 34),
+('Jennifer Orwell', 19),
+('Bob', 45),
+('Melody Pond', 77),
+('Dean Winchester', 14),
+('Jodie Whittaker', 38);
 
-/* Connect to the database */
+-- Insert the following data into species table
+INSERT INTO species (name) VALUES
+('Pokemon'),
+('Digimon');
 
-\ c vet_clinic
 
-/* Create a table named animals */
+-- Modify your inserted animals so it includes the species_id value
+UPDATE animals SET species_id = 
+CASE 
+  WHEN name LIKE '%mon' THEN (SELECT id FROM species WHERE name = 'Digimon')
+  ELSE (SELECT id FROM species WHERE name = 'Pokemon')
+END;
 
-CREATE TABLE animals (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    date_of_birth DATE,
-    escape_attempts INTEGER,
-    neutered BOOLEAN,
-    weight_kg DECIMAL(5,2)
-);
+--Modify your inserted animals to include owner information (owner_id):
+UPDATE animals SET owner_id =
+CASE 
+  WHEN name = 'Agumon' THEN (SELECT id FROM owners WHERE full_name = 'Sam Smith')
+  WHEN name IN ('Gabumon', 'Pikachu') THEN (SELECT id FROM owners WHERE full_name = 'Jennifer Orwell')
+  WHEN name IN ('Devimon', 'Plantmon') THEN (SELECT id FROM owners WHERE full_name = 'Bob')
+  WHEN name IN ('Charmander', 'Squirtle', 'Blossom') THEN (SELECT id FROM owners WHERE full_name = 'Melody Pond')
+  WHEN name IN ('Angemon', 'Boarmon') THEN (SELECT id FROM owners WHERE full_name = 'Dean Winchester')
+END;
 
-/* Insert the provided data into the animals table. */
 
-INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg)
-VALUES ('Agumon', '2020-02-03', 0, true, 10.23),
-       ('Gabumon', '2018-11-15', 2, true, 8),
-       ('Pikachu', '2021-01-07', 1, false, 15.04),
-       ('Devimon', '2017-05-12', 5, true, 11);
 
