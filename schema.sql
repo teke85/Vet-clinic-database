@@ -7,13 +7,13 @@ CREATE TABLE owners (
   age INTEGER
 );
 
--- create a table named species
+/* create a table named species */
 CREATE TABLE species (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255)
 );
 
--- modify animals table
+/* modify animals table */
 ALTER TABLE animals
 ADD COLUMN species_id INTEGER,
 ADD COLUMN owner_id INTEGER,
