@@ -1,5 +1,12 @@
 /* Database schema to keep the structure of entire database. */
 
+/* Create vet clinic database*/
+CREATE DATABASE vet_clinic;
+
+/* Connect to the database */
+
+\ c vet_clinic
+
 --create animals table
 CREATE TABLE animals (
   id serial PRIMARY KEY,
