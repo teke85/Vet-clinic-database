@@ -1,5 +1,6 @@
 /* Database schema to keep the structure of entire database. */
 
+
 /* Create a table named species */
 CREATE TABLE owners (
   id SERIAL PRIMARY KEY,

@@ -1,3 +1,4 @@
+
 /* Insert the following data into owners table*/
 INSERT INTO owners (full_name, age) VALUES
 ('Sam Smith', 34),
@@ -29,6 +30,3 @@ CASE
   WHEN name IN ('Charmander', 'Squirtle', 'Blossom') THEN (SELECT id FROM owners WHERE full_name = 'Melody Pond')
   WHEN name IN ('Angemon', 'Boarmon') THEN (SELECT id FROM owners WHERE full_name = 'Dean Winchester')
 END;
-
-
-

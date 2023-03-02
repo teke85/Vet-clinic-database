@@ -104,7 +104,8 @@ Example commands:
 
 ```sh
   cd my-folder
-  git clone https://github.com/JacintaNgwu/Vet-clinic-database.git
+
+  git clone https://github.com/tekeb5/Vet-clinic-database.git
 ```
 --->
 
@@ -128,38 +129,6 @@ To run the project, execute the following command:
 
 > - \c vet_clinic in terminal to connect to database
 > - \d animals 
-
-<!--
-Example command:
-
-```sh
-  rails server
-```
---->
-
-### Run tests
-
-To run tests, run the following command:
-
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
-```
---->
-
-### Deployment
-
-You can deploy this project using:
-
-<!--
-Example:
-
-```sh
-
-```
- -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
