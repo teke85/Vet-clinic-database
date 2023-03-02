@@ -56,7 +56,6 @@ COMMIT;
 
 /* Write queries to answer the following questions */
 
-BEGIN;
 
 /* How many animals are there? */
 SELECT COUNT(*) FROM animals;
@@ -68,11 +67,8 @@ SELECT COUNT(*) FROM animals WHERE escape_attempts = 0;
 SELECT AVG(weight_kg) FROM animals;
 
 /* Who escapes the most, neutered or not neutered animals? */
-SELECT neutered, SUM(escape_attempts) as total_escape_attempts 
-FROM animals 
-GROUP BY neutered 
-ORDER BY total_escape_attempts DESC 
-LIMIT 1;
+ SELECT neutered, AVG(escape_attempts) FROM animals
+ GROUP BY neutered;
 
 /* What is the minimum and maximum weight of each type of animal? */
 SELECT species, MIN(weight_kg) AS min_weight, MAX(weight_kg) AS max_weight
@@ -84,5 +80,3 @@ SELECT species, AVG(escape_attempts) AS avg_escape_attempts
 FROM animals 
 WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31' 
 GROUP BY species;
-
-COMMIT;
