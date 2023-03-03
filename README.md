@@ -104,6 +104,7 @@ Example commands:
 
 ```sh
   cd my-folder
+
   git clone https://github.com/tekeb5/Vet-clinic-database.git
 ```
 --->
@@ -148,7 +149,7 @@ To run the project, execute the following command:
 > Describe 1 - 3 features you will add to the project.
 
 - [ ] **[Update animals table]**
-- [ ] **[Add more Querries]**
+- [ ] **[Add more Queries]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -182,6 +183,6 @@ I would like to thank Microverse code reviewers and everyone who viewed this pro
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](./LICENSE.txt) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
