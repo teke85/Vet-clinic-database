@@ -38,6 +38,32 @@ ADD COLUMN species_id INTEGER,
 ADD COLUMN owner_id INTEGER,
 DROP COLUMN species;
 
+--Create the vets table:
+CREATE TABLE vets (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  age INT,
+  date_of_graduation DATE
+);
+
+--create the specialization table:
+CREATE TABLE specializations (
+  vet_id INT,
+  species TEXT,
+  FOREIGN KEY (vet_id) REFERENCES vets(id)
+);
+
+--create the visits table:
+CREATE TABLE visits (
+  animal VARCHAR(255),
+  vet_id INT,
+  visit_date DATE,
+  FOREIGN KEY (vet_id) REFERENCES vets(id)
+);
+
+
+
+
 
 
 
